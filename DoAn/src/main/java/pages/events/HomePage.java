@@ -27,4 +27,10 @@ public class HomePage extends AppiumBase {
         Assert.assertTrue(verifyElementDisplayed(homeElement.setting));
         Assert.assertTrue(verifyElementDisplayed(homeElement.profile));
     }
+    public void verifyMessageDisplayed(String message){
+        verifyContent(homeElement.message, message);
+    }
+    public void clickToFinance(){
+        clickToButton(homeElement.finance);
+    }
 }

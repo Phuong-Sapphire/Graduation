@@ -28,5 +28,17 @@ Feature: test myHaui application - Login function
         |2019606731🌷👩👨|Sapphire@310278|
         |2019606731      |Sapphire@310278🌷👩👨|
 
+        Scenario: TC_09 verify forgot password page display
+          When click to not allow the notification
+          And click to forgot password button
+          Then verify forgot password page displayed
+
+          Scenario: TC_10 verify message in homepage display
+            When click to not allow the notification
+            And input username: "2019606731" and password: "Sapphire@310278"
+            And click to login button
+            And click to skip button
+            Then verify the message display: "Xin chào, Nguyễn Mai Phương"
+
 
 

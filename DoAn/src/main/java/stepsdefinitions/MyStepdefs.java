@@ -5,6 +5,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pages.events.ForgotPasswordPage;
 import pages.events.HomePage;
 import pages.events.LoginPage;
 
@@ -15,6 +16,7 @@ public class MyStepdefs extends AppiumBase {
     AppiumBase appiumBase = new AppiumBase();
     LoginPage loginPage = new LoginPage();
     HomePage homePage = new HomePage();
+    ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage();
     @Given("open MyHaUI application")
     public void openMyHaUIApplication() throws MalformedURLException {
         appiumBase.setup();
@@ -59,5 +61,20 @@ public class MyStepdefs extends AppiumBase {
     @Then("verify message display: {string}")
     public void verifyMessageDisplay(String arg0) {
         loginPage.verifyMessageDisplay(arg0);
+    }
+
+    @And("click to forgot password button")
+    public void clickToForgotPasswordButton() {
+        loginPage.clickToForgotPassword();
+    }
+
+    @Then("verify forgot password page displayed")
+    public void verifyForgotPasswordPageDisplayed() {
+        forgotPasswordPage.verifyForgotPasswordDisplay();
+    }
+
+    @Then("verify the message display: {string}")
+    public void verifyTheMessageDisplay(String arg0) {
+        homePage.verifyMessageDisplayed(arg0);
     }
 }

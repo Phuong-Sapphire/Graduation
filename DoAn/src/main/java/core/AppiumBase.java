@@ -73,6 +73,11 @@ public class AppiumBase {
         Assert.assertEquals(element.getAttribute("content-desc"), value);
     }
 
+    public String getContentDesc(By by){
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(by));
+        return element.getAttribute("content-desc");
+    }
+
     public boolean verifyElementDisplayed(By by) {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
         if (element.isDisplayed()) {

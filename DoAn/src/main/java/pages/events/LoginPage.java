@@ -34,4 +34,7 @@ public class LoginPage extends AppiumBase {
     public void verifyMessageDisplay(String message){
         verifyContent(element.message,message);
     }
+    public void clickToForgotPassword(){
+        clickToButton(element.forgotPassword);
+    }
 }
