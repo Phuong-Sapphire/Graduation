@@ -11,6 +11,9 @@ public class DebtPaymentPage extends AppiumBase {
     double stationeryForExamsStillOwned;
     double totalDebt;
     double amountToBePaid;
+    double creditCoefficient;
+    double unitPrice;
+    double intoMoney;
     public void verifyDebtPaymentDisplay(){
         Assert.assertTrue(verifyElementDisplayed(debtPaymentElement.attention));
         Assert.assertTrue(verifyElementDisplayed(debtPaymentElement.amountToBePaid));
@@ -63,5 +66,63 @@ public class DebtPaymentPage extends AppiumBase {
         Double actualAmountToBePaid = Math.abs(amountInTheAccount - totalDebt);
         Assert.assertEquals(actualAmountToBePaid, amountToBePaid);
     }
+    public void clickToPaymentToBeMode(){
+        clickToButton(debtPaymentElement.paymentsToBeMode);
+    }
+
+    public void clickToPaymentDetail(){
+        clickToButton(debtPaymentElement.paymentDetail);
+    }
+
+    public void clickToMakePayment(){
+        clickToButton(debtPaymentElement.makePayment);
+    }
+
+    public void clickToAcceptPayment(){
+        clickToButton(debtPaymentElement.payment);
+    }
+
+    public void verifyErrorMessage(String value){
+        verifyContent(debtPaymentElement.notification, value);
+    }
+
+    public void getDataPaymentDetail(){
+        String contentOfPaymentDetail = getContentDesc(debtPaymentElement.paymentDetail);
+        System.out.println(contentOfPaymentDetail);
+        contentOfPaymentDetail = contentOfPaymentDetail.replaceAll("[^0-9,\\.]", ",");
+        System.out.println(contentOfPaymentDetail);
+        contentOfPaymentDetail = contentOfPaymentDetail.replaceAll(",", " ");
+        contentOfPaymentDetail = contentOfPaymentDetail.replaceAll("\\s+"," ");
+        contentOfPaymentDetail = contentOfPaymentDetail.trim();
+        String[] str = contentOfPaymentDetail.split(" ");
+        for(int i = 0; i< str.length; i++){
+            str[i] = str[i].replace(".", "");
+            System.out.println(str[i]);
+        }
+        System.out.println(str.length);
+        for(int i = 0; i< str.length; i++){
+            if(i == 3){
+                creditCoefficient = Integer.parseInt(str[i]);
+                System.out.println("creditCoefficient: " + creditCoefficient);
+            }else if(i == 4){
+                unitPrice = Integer.parseInt(str[i]);
+                System.out.println("unitPrice: " + unitPrice);
+            }else if(i == 5){
+                intoMoney = Integer.parseInt(str[i]);
+                System.out.println("intoMoney:  " + intoMoney);
+            }
+
+        }
+    }
+
+    public void verifyIntoMoney(){
+        getDataPaymentDetail();
+        creditCoefficient /= 10;
+        Double actualIntoMoney = (creditCoefficient * unitPrice);
+        System.out.println(actualIntoMoney);
+        Assert.assertEquals(actualIntoMoney, intoMoney);
+    }
+
+
 
 }

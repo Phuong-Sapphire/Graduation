@@ -17,4 +17,8 @@ public class FinancePage extends AppiumBase {
     public void clickToDebtPayment(){
         clickToButton(financeElement.debtPayment);
     }
+
+    public void clickToTransactionHistory(){
+        clickToButton(financeElement.transactionHistory);
+    }
 }

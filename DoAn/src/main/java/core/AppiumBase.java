@@ -78,6 +78,10 @@ public class AppiumBase {
         return element.getAttribute("content-desc");
     }
 
+    public String getText(By by){
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(by));
+        return element.getText();
+    }
     public boolean verifyElementDisplayed(By by) {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
         if (element.isDisplayed()) {

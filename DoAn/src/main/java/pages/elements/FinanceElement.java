@@ -14,4 +14,5 @@ public class FinanceElement {
     public By amountPaid = By.xpath("//android.widget.Button[@content-desc=\"Những khoản đã thanh toán\"]");
     public By transactionHistory = By.xpath("//android.widget.Button[@content-desc=\"Lịch sử giao dịch\"]");
     public By printEinvoice = By.xpath("//android.widget.Button[@content-desc=\"In hóa đơn điện tử\"]");
+
 }
