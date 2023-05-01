@@ -21,4 +21,8 @@ public class FinancePage extends AppiumBase {
     public void clickToTransactionHistory(){
         clickToButton(financeElement.transactionHistory);
     }
+
+    public void clickToPrintInvoice(){
+        clickToButton(financeElement.printEinvoice);
+    }
 }

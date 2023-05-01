@@ -71,3 +71,12 @@ Feature:  test myHaui application - finance function
                 And click to transaction history
                 Then verify transaction history displays
 
+                Scenario: TC_21 verify print e-invoice page displays
+                  When click to not allow the notification
+                  And input username: "2019606731" and password: "Sapphire@310278"
+                  And click to login button
+                  And click to skip button
+                  And click to finance
+                  And click to print e-invoice
+                  Then verify this page displays
+

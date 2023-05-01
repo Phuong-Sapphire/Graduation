@@ -3,16 +3,14 @@ package stepsdefinitions;
 import core.AppiumBase;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import pages.events.DebtPaymentPage;
-import pages.events.FinancePage;
-import pages.events.HomePage;
-import pages.events.TransactionHistoryEvents;
+import pages.events.*;
 
 public class FinanceStepdefs extends AppiumBase {
     HomePage homePage = new HomePage();
     FinancePage financePage = new FinancePage();
     DebtPaymentPage debtPaymentPage = new DebtPaymentPage();
     TransactionHistoryEvents transactionHistoryEvents = new TransactionHistoryEvents();
+    PrintEinvoicePage printEinvoicePage = new PrintEinvoicePage();
     @And("click to finance")
     public void clickToFinance(){
         homePage.clickToFinance();
@@ -90,5 +88,15 @@ public class FinanceStepdefs extends AppiumBase {
     @Then("verify the into money displays is correctly")
     public void verifyTheIntoMoneyDisplaysIsCorrectly() {
         debtPaymentPage.verifyIntoMoney();
+    }
+
+    @And("click to print e-invoice")
+    public void clickToPrintEInvoice() {
+        financePage.clickToPrintInvoice();
+    }
+
+    @Then("verify this page displays")
+    public void verifyThisPageDisplays() {
+        printEinvoicePage.verifyDisplay();
     }
 }
