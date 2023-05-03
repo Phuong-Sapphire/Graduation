@@ -11,7 +11,7 @@ import pages.events.LoginPage;
 
 import java.net.MalformedURLException;
 
-public class MyStepdefs extends AppiumBase {
+public class LoginStepdefs extends AppiumBase {
 
     AppiumBase appiumBase = new AppiumBase();
     LoginPage loginPage = new LoginPage();

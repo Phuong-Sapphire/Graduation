@@ -33,4 +33,7 @@ public class HomePage extends AppiumBase {
     public void clickToFinance(){
         clickToButton(homeElement.finance);
     }
+    public void clickToLearningResults(){
+        clickToButton(homeElement.learningResult);
+    }
 }
