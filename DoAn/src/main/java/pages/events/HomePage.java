@@ -36,4 +36,7 @@ public class HomePage extends AppiumBase {
     public void clickToLearningResults(){
         clickToButton(homeElement.learningResult);
     }
+    public void clickToSchedule(){
+        clickToButton(homeElement.schedule);
+    }
 }

@@ -77,4 +77,9 @@ public class LoginStepdefs extends AppiumBase {
     public void verifyTheMessageDisplay(String arg0) {
         homePage.verifyMessageDisplayed(arg0);
     }
+
+    @And("click to schedule")
+    public void clickToSchedule() {
+        homePage.clickToSchedule();
+    }
 }
