@@ -87,4 +87,9 @@ public class LoginStepdefs extends AppiumBase {
     public void clickToExamSchedule() {
         homePage.clickToExamSchedule();
     }
+
+    @And("click to course")
+    public void clickToCourse() {
+        homePage.clickToCourse();
+    }
 }

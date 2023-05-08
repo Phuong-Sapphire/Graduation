@@ -42,4 +42,7 @@ public class HomePage extends AppiumBase {
     public void clickToExamSchedule(){
         clickToButton(homeElement.examSchedule);
     }
+    public void clickToCourse(){
+        clickToButton(homeElement.course);
+    }
 }
