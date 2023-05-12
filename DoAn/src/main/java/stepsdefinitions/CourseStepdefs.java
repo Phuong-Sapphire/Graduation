@@ -34,4 +34,24 @@ public class CourseStepdefs extends AppiumBase {
     public void verifyEducationProgramDetailsDisplays() {
         coursePage.verifyEducationProgramDetails();
     }
+
+    @And("click to curriculum")
+    public void clickToCurriculum() {
+        coursePage.clickToCurriculum();
+    }
+
+    @Then("verify curriculum displays")
+    public void verifyCurriculumDisplays() {
+        coursePage.verifyCurriculumDisplays();
+    }
+
+    @And("click to class information registration section")
+    public void clickToClassInformationRegistrationSection() {
+        coursePage.clickToClassInformation();
+    }
+
+    @Then("verify class information registration displays")
+    public void verifyClassInformationRegistrationDisplays() {
+        coursePage.verifyClassInforRegisSection();
+    }
 }

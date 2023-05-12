@@ -92,4 +92,9 @@ public class LoginStepdefs extends AppiumBase {
     public void clickToCourse() {
         homePage.clickToCourse();
     }
+
+    @And("click to graduate")
+    public void clickToGraduate() {
+        homePage.clickToGraduate();
+    }
 }

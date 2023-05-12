@@ -18,4 +18,13 @@ public class CourseElement {
    public By trainingTime = By.xpath("//android.view.View[@index = 8]");
    public By totalVolume = By.xpath("//android.view.View[@index = 10]");
    public By typeOfEducation = By.xpath("//android.view.View[@index = 12]");
+   public By outline = By.xpath("(//android.view.View[@index = 1])[2]");
+   public By listOfOutline = By.xpath("(//android.widget.Button[@index = 0])[2]");
+   public By programInformation = By.xpath("(//android.view.View[@index = 0])[7]");
+   public By compulsoryCourse = By.xpath("//android.view.View[@index = 11]");
+   public By electiveCourse = By.xpath("(//android.view.View[@index = 1])[3]");
+   public By majors = By.xpath("(//android.view.View[@index = 2])[1]");
+   public By compulsoryCredits = By.xpath("//android.view.View[@index =6]");
+   public By sequenceOfSemester = By.xpath("//android.widget.HorizontalScrollView");
+   public By course = By.xpath("(//android.view.View[@index = 0])[11]");
 }

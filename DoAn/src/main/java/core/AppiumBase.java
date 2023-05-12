@@ -5,12 +5,14 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.touch.TapOptions;
 import io.appium.java_client.touch.offset.ElementOption;
 import io.appium.java_client.touch.offset.PointOption;
+import io.cucumber.java.eo.Se;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
@@ -170,6 +172,12 @@ public class AppiumBase {
         int endx = (int) (size.width * 0.10);
         int starty = size.height / 2;
         swipe(endx, starty, startx, starty);
+    }
+
+    public void selectOption(By by, String value){
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(by));
+        Select select = new Select(element);
+        select.selectByValue(value);
     }
 
 }

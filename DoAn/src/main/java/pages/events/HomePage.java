@@ -45,4 +45,8 @@ public class HomePage extends AppiumBase {
     public void clickToCourse(){
         clickToButton(homeElement.course);
     }
+
+    public void clickToGraduate(){
+        clickToButton(homeElement.graduate);
+    }
 }
